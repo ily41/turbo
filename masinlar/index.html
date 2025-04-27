@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy A Car</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+</head>
+<body>
+    <nav class="bg-[#CA1016] w-full top-0 start-0">
+        <div class="max-w-screen-lg flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-xl font-bold whitespace-nowrap dark:text-white">TURBO.AZ</span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button type="button" class="cursor-pointer text-white font-medium rounded-lg text-sm px-4 py-2 text-center bg-[#85C01F] ">Yeni elan</button>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="cursor-pointer inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700">
+                    <li>
+                        <a href="#" class="block py-2  text-white rounded-sm md:bg-transparent " aria-current="page">Bütün elanlar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2  text-white rounded-sm md:bg-transparent " aria-current="page">Dilerlər</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2  text-white rounded-sm md:bg-transparent " aria-current="page">Avtokataloq</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2  text-white rounded-sm md:bg-transparent " aria-current="page">Moto</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2  text-white rounded-sm md:bg-transparent " aria-current="page">Ehtiyat hissələr və aksesuarlar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="block py-2  text-white rounded-sm md:bg-transparent " aria-current="page">İcarə</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- After pseudo-element applied to the navbar -->
+        <div class="after:absolute after:content-[''] after:w-full after:h-1 after:bottom-0"></div>
+    </nav>
+    
+
+    <main>
+        <div class="max-w-screen-lg mx-auto">
+        <div class = " flex flex-wrap items-center justify-between  p-4 bg-[#EBEDF3]">
+            <div class = "grid grid-cols-4 grid-rows-2 gap-4">
+                
+              <div class="relative inline-block w-full">
+                <button class="brandButton cursor-pointer btn-drop w-full text-gray bg-white justify-between font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                  Marka
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+                </button>
+              
+                <!-- Dropdown -->
+                <div class="dropdown-content absolute left-0 mt-2 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
+                  <ul id = "brands" class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                    <li><a href="#" onclick = "activateModel('reset')" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">X Sıfırla</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class=" relative inline-block w-full">
+                <button id = "modelButton"  class=" reset cursor-pointer bg-[#F5F6F9] text-[#BCC0D0]  btn-drop w-full   justify-between font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                  Model
+                  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+                </button>
+              
+                <!-- Dropdown -->
+                <div class="dropdown-content absolute left-0 mt-2 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
+                  <ul id = "models" class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                  </ul>
+                </div>
+              </div>
+              
+    
+                
+                
+                
+
+                    <div class="inline-flex rounded-md shadow-xs" role="group">
+                        <button autofocus type="button" onclick = "isNewFunc(this)" id = "allButton" class="cursor-pointer text-gray-700 bg-white border border-gray-200 focus:text-white focus:bg-red-700 focus:border-red-700 focus:outline-none transition-all duration-200 w-full py-2 text-sm font-medium rounded-s-lg">
+                          Hamısı
+                        </button>
+                        <button type="button" onclick = "isNewFunc(this)" id = "newButton" class="cursor-pointer text-gray focus:text-white focus:bg-red-700 w-full py-2 text-sm font-medium bg-white border-t border-b border-gray-200 ">
+                          Yeni
+                        </button>
+                        <button type="button" onclick = "isNewFunc(this)" id = "drivenButton" class="cursor-pointer text-gray focus:text-white focus:bg-red-700 w-full py-2 text-sm font-medium bg-white border border-gray-200 rounded-e-lg ">
+                          Sürülmüş
+                        </button>
+                    </div>
+            
+                    <div class="relative inline-block w-full">
+                      <button class="cursor-pointer btn-drop w-full text-gray bg-white justify-between font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                        Şəhər
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                      </button>
+                    
+                      <!-- Dropdown -->
+                      <div class="dropdown-content absolute left-0 mt-2 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                          <li onclick = "cityClick(this,'Baku')" class = "check pr-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white flex justify-between items-center "><a href="#" class="block px-4 py-2 ">Bakı </a> <input type="checkbox"></li>
+                          <li onclick = "cityClick(this,'Ganja')" class = "check pr-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white flex justify-between items-center "><a href="#" class="block px-4 py-2 ">Gəncə</a> <input type="checkbox"></li>
+                          <li onclick = "cityClick(this,'Sumqayit')" class = "check pr-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white flex justify-between items-center "><a href="#" class="block px-4 py-2 ">Sumqayıt</a> <input type="checkbox"></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class = "flex ">
+                    <input id = "minPrice" type="text" class = "w-30 border-[0.1px] rounded-l-sm" name="" id="" placeholder="Qiymət, min.">
+                    <input id = "maxPrice" type="text" class = "w-30 border-[0.1px] rounded-r-sm " placeholder="maks.">
+                </div>
+
+                <div>
+                  <div class="relative inline-block ">
+                    <button class="cursor-pointer btn-drop w-full text-gray bg-white justify-between font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                      AZN
+                      <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                      </svg>
+                    </button>
+                  
+                    <!-- Dropdown -->
+                    <div class="dropdown-content absolute left-0 mt-2 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
+                      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                        <li><a href="#" onclick = "currencyFunc(this)" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">AZN</a></li>
+                        <li><a href="#" onclick = "currencyFunc(this)" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">USD</a></li>
+                        <li><a href="#" onclick = "currencyFunc(this)" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">EUR</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                    
+                  
+                  <button class="cursor-pointer text-gray bg-white font-medium rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center" type="button">Kredit</button>
+                  <button class="text-gray cursor-pointer  bg-white font-medium rounded-lg text-sm px-2.5 py-2.5 text-center inline-flex items-center" type="button">Barter</button>
+
+                </div>
+
+                <div class="relative inline-block w-full">
+                  <button class="cursor-pointer btn-drop w-full text-gray bg-white justify-between font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                    Ban növü
+                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                  </button>
+
+                  <!-- Dropdown -->
+                  <div class="dropdown-content absolute left-0 mt-2 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
+                    <ul id = "banUL" class="py-2 text-sm text-gray-700 dark:text-gray-200">
+                      </ul>
+                  </div>
+                </div>
+                
+                <div>
+
+
+                  <div class="relative inline-block ">
+                    <button  id = "yearMinButton" class="cursor-pointer btn-drop w-full text-gray bg-white justify-between font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                      İl, min.
+                      <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                      </svg>
+                    </button>
+                  
+                    <!-- Dropdown -->
+                    <div  class="dropdown-content absolute left-0 mt-2 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
+                      <ul id = "yearMinUL" class="py-2 text-sm text-gray-700 dark:text-gray-200 max-h-60 overflow-y-auto p-0 m-0 list-none">
+                       
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="relative inline-block">
+                    <button id  = "yearMaxButton" class="cursor-pointer btn-drop w-full text-gray bg-white justify-between font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">
+                      maks.
+                      <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                      </svg>
+                    </button>
+                  
+                    <!-- Dropdown -->
+                    <div class="dropdown-content absolute left-0 mt-2 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700">
+                      <ul id = "yearMaxUL" class="py-2 text-sm text-gray-700 dark:text-gray-200 max-h-60 overflow-y-auto p-0 m-0 list-none">
+                        
+                      </ul>
+                    </div>
+                  </div> 
+                </div>
+            </div>
+
+            <div class = "flex justify-between my-5 w-full items-center">
+                <div>
+                    <span>Bu gün: <span class="text-blue-600">1681 yeni elan</span></span>
+                </div>
+
+                <div class = "flex items-center gap-4">
+                    <span class = "cursor-pointer" onclick  ="reset()">Sıfırla</span>
+                    <div class = "flex items-center">
+                        <a href="" class = "text-red-600">Daha çox filtr </a>
+                        <svg class="h-2.5 ms-3 text-red-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="m1 1 4 4 4-4"/></svg>
+                    </div>
+                    <button onclick = "showCars() "class = "cursor-pointer bg-red-700 rounded-lg text-white w-40 h-10">Elanları göstər</button>
+                </div>
+
+            </div>
+
+            
+        </div>
+        <div class = "bg-[#F6F7FA] p-5">
+            <span class="bg-none font-semibold">PREMIUM ELANLAR</span>
+        </div>
+
+        <section class = "mainSection bg-[#F5F6F9] px-3 py-6 grid grid-cols-4 gap-4"></section>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    <script>
+
+    </script>
+    
+</body>
+</html>
